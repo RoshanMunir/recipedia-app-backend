@@ -11,11 +11,11 @@ mongoose.connect(process.env.MONGO_URI)
 
 async function seed() {
   try {
-    // Clear old data
+    
     await Ingredient.deleteMany({});
     await Recipe.deleteMany({});
 
-    // Ingredients
+   
     const chicken = new Ingredient({ name: "Chicken", type: "Meat" });
     const tomato = new Ingredient({ name: "Tomato", type: "Vegetable" });
     const onion = new Ingredient({ name: "Onion", type: "Vegetable" });
@@ -28,10 +28,10 @@ async function seed() {
     await egg.save();
     await bread.save();
 
-    // Recipes with baseServings
+   
     const chickenCurry = new Recipe({
       name: "Chicken Curry",
-      baseServings: 2, // 👈 default servings
+      baseServings: 2, 
       ingredients: [
         { ingredient: chicken._id, quantity: "500g" },
         { ingredient: tomato._id, quantity: "2 pcs" },

@@ -8,7 +8,7 @@ const recipeSchema = new mongoose.Schema({
   baseServings: {
     type: Number,
     required: true,
-    default: 1 // 👈 Default to 1 serving if not provided
+    default: 1 
   },
   ingredients: [
     {
@@ -28,7 +28,7 @@ const recipeSchema = new mongoose.Schema({
     required: true,
   },
   time_required: {
-    type: Number, // in minutes
+    type: Number, 
     required: true,
   },
   difficulty: {
